@@ -7,6 +7,7 @@ module.exports.go = (server) => {
         console.log("connection alive");
         spark.on("data", (data) => {
             console.log(data);
+            primus.write(data);
         });
     });
 };
